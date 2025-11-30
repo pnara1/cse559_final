@@ -21,7 +21,6 @@ plt.savefig("histogram_scores.png")
 #scatter plot comparing both scores
 #above diagonal means seq+3d score is higher
 #below diagonal means seq-only score is higher
-
 plt.figure(figsize=(6, 6))
 plt.scatter(df["seq_only_score"], df["seq_3d_score"], s=10, alpha=0.5)
 plt.xlabel("Seq-only score")
@@ -29,7 +28,7 @@ plt.ylabel("Seq + 3D score")
 plt.title("Per-sample comparison of scores")
 min_val = min(df["seq_only_score"].min(), df["seq_3d_score"].min())
 max_val = max(df["seq_only_score"].max(), df["seq_3d_score"].max())
-plt.plot([min_val, max_val], [min_val, max_val], linestyle="--")
+plt.plot([min_val, max_val], [min_val, max_val], linestyle="--", color="black")
 plt.tight_layout()
 plt.savefig("scatter_scores.png")
 
